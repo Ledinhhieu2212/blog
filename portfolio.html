@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/portfolio.css">
     <title>portfolio</title>
 </head>
 <body>
-    portfolio
+    <div id="main">
+        <header>
+            <nav>
+                <ul>
+                    <li><button onclick="openCity('home')">Home</button></li>
+                    <li><button onclick="openCity('about')">About</button></li>
+                    <li><button  onclick="openCity('skill')">Skill</button></li>
+                    <li><button onclick="openCity('project')">Project</button></li>
+                    <li><button onclick="openCity('certificate')">Certificate</button></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <section id="home" class="section home">Home</section>
+            <section id="about" class="section about"  style="display:none">About</section>
+            <section id="skill" class="section skill" style="display:none">Skills</section>
+            <section id="project" class="section project" style="display:none">project</section>
+            <section id="certificate" class="section certificate" style="display:none"> certificate</section>
+        </div>
+    </div>
+    <script>
+        function openCity(cityName) {
+          var i;
+          var x = document.getElementsByClassName("section");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          document.getElementById(cityName).style.display = "block";  
+        }
+        </script>
 </body>
 </html>
